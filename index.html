@@ -16,6 +16,13 @@
             overflow: scroll; /* Show scrollbars */
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                document.body.innerHTML = "<div class='flex items-center justify-center min-h-screen text-2xl font-bold text-gray-200'>Not available for mobile users at the moment</div>";
+            }
+        });
+    </script>
 </head>
 <body class="bg-gray-900 text-gray-300 transition-colors duration-300">
     <!-- Header -->
