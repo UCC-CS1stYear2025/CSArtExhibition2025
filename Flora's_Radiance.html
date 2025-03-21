@@ -72,7 +72,7 @@
                 <!-- Comment Box -->
                 <div class="mt-8 bg-gray-700 p-6 rounded-lg shadow">
                     <h3 class="text-lg font-semibold mb-3 text-gray-200">Leave a Comment</h3>
-                    <form action="https://formspree.io/f/xeoaaajk" method="POST" class="space-y-4">
+                    <form id="myForm"action="https://formspree.io/f/xeoaaajk" method="POST" class="space-y-4">
                         <div>
                             <label for="name" class="block text-gray-300">Your Name</label>
                             <input type="text" id="name" name="name" required class="w-full p-2 border rounded bg-gray-800 border-gray-600 text-gray-200">
@@ -89,6 +89,15 @@
                             Submit
                         </button>
                     </form>
+                    <script>
+                        document.getElementById("myForm").addEventListener("submit", function(event) {
+                            event.preventDefault();
+                            
+                            // Manually clear each field
+                            document.querySelector("[name='name']").value = "";
+                            document.querySelector("[name='email']").value = "";
+                        });
+                    </script>
                 </div>
             </div>
         </section>
